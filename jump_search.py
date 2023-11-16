@@ -1,20 +1,18 @@
-import timeit
-import math
+import time
 
 def jump_search(arr, target):
+    start_time = time.time()
     n = len(arr)
-    jump = int(math.sqrt(n))
-    left, right = 0, 0
+    step = int(n ** 0.5)
+    prev, current = 0, 0
 
-    while right < n and arr[right] < target:
-        left = right
-        right += jump
+    while current < n and arr[current] < target:
+        prev = current
+        current += step
 
-    for i in range(left, min(right, n)):
+    for i in range(prev, min(current, n)):
         if arr[i] == target:
+            return time.time() - start_time
             return i
 
     return -1
-
-def jump_search_wrapper(func, *args, **kwargs):
-    return func(*args, **kwargs)
