@@ -5,9 +5,10 @@ def binary_search(arr, target, low, high):
     while low <= high:
         mid = (low + high) // 2
         if arr[mid] == target:
-            return time.time() - start_time
+            elapsed_time = (time.time() - start_time) * 1000  # Convert to milliseconds
+            return mid, elapsed_time
         elif arr[mid] < target:
             low = mid + 1
         else:
             high = mid - 1
-    return -1
+    return -1, -1
