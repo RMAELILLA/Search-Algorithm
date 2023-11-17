@@ -9,11 +9,9 @@ def ternary_search(arr, target):
         mid2 = high - (high - low) // 3
 
         if arr[mid1] == target:
-            elapsed_time = (time.time() - start_time) * 1000  # Convert to milliseconds
-            return mid1, elapsed_time  # Return both the index and elapsed time
+            return mid1
         elif arr[mid2] == target:
-            elapsed_time = (time.time() - start_time) * 1000  # Convert to milliseconds
-            return mid2, elapsed_time  # Return both the index and elapsed time
+            return mid2
         elif arr[mid1] < target:
             low = mid1 + 1
         elif arr[mid2] > target:
@@ -21,4 +19,4 @@ def ternary_search(arr, target):
         else:
             low, high = mid1 + 1, mid2 - 1
 
-    return -1, (time.time() - start_time) * 1000  # If the target is not found, return -1 and elapsed time
+    return -1  # If the target is not found, return -1

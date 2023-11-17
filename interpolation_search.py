@@ -9,10 +9,10 @@ def interpolation_search(arr, target):
 
         if arr[pos] == target:
             elapsed_time = (time.time() - start_time) * 1000  # Convert to milliseconds
-            return pos, elapsed_time  # Return both the index and elapsed time
+            return pos
         elif arr[pos] < target:
             low = pos + 1
         else:
             high = pos - 1
 
-    return -1, (time.time() - start_time) * 1000  # If the target is not found, return -1 and elapsed time
+    return -1  # If the target is not found, return -1
