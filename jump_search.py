@@ -12,7 +12,7 @@ def jump_search(arr, target):
 
     for i in range(prev, min(current, n)):
         if arr[i] == target:
-            elapsed_time = (time.time() - start_time) * 1000  # Convert to milliseconds
-            return i  # Return only the index
+            elapsed_time = (time.time() - start_time) * 1000
+            return i
 
-    return -1  # If the target is not found, return -1
+    return -1

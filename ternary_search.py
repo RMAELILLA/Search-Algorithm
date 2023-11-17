@@ -19,4 +19,4 @@ def ternary_search(arr, target):
         else:
             low, high = mid1 + 1, mid2 - 1
 
-    return -1  # If the target is not found, return -1
+    return -1
